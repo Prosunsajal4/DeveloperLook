@@ -169,7 +169,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // `Addbook` route removed (book-related feature)
+      
       {
         path: "my-inventory",
         element: (
@@ -228,7 +228,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // `MyOrders` route removed (book-related feature)
+      
       {
         path: "manage-orders",
         element: (
@@ -241,7 +241,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // `MyWishlist` route removed (book-related feature)
+      
     ],
   },
 ]);

@@ -4,7 +4,7 @@ const cron = require("node-cron");
 module.exports = function initNewsService({
   db,
   apiKey,
-  // default: run at minute 0 every hour
+  
   cronSchedule = "0 * * * *",
 } = {}) {
   if (!db) throw new Error("db is required for news service");
@@ -20,9 +20,9 @@ module.exports = function initNewsService({
   async function fetchAndStore() {
     try {
       console.log("[newsService] fetching latest news...");
-      // Avoid sending a default `page` value — NewsData may reject pagination
-      // when no query/filter is provided. Let the API return the first page
-      // by omitting `page` unless explicitly required.
+      
+      
+      
       const params = {
         apikey: apiKey,
       };
@@ -31,9 +31,9 @@ module.exports = function initNewsService({
         timeout: 30_000,
       });
 
-      // NewsData sometimes returns an error object with code 'UnsupportedFilter'
-      // when certain filters/pagination values are not allowed. If that occurs,
-      // log and exit early.
+      
+      
+      
       if (resp?.data?.status === "error") {
         const code = resp.data?.results?.code;
         if (code === "UnsupportedFilter") {

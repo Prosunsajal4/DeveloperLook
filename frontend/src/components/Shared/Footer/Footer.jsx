@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 const XIcon = () => (
   <svg
     width="20"
@@ -81,11 +82,11 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <FaNewspaper className="text-2xl text-white" />
-              </div>
-              <span className="font-bold text-2xl">
-                News<span className="text-indigo-400">Hub</span>
-              </span>
+                  <FaNewspaper className="text-2xl text-white" />
+                </div>
+                <span className="font-bold text-2xl">
+                  News<span className="text-indigo-400">Hub</span>
+                </span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Fresh news aggregated for you — searchable, filterable, and

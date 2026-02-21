@@ -1,12 +1,24 @@
-// Modern Service Worker with advanced caching strategies
+
 const CACHE_NAME = "newshub-v1.0.0";
 const STATIC_CACHE = "newshub-static-v1.0.0";
 const DYNAMIC_CACHE = "newshub-dynamic-v1.0.0";
 const API_CACHE = "newshub-api-v1.0.0";
 
-const STATIC_ASSETS = ["/", "/index.html", "/manifest.json", "/favicon.ico"];
 
-const API_ENDPOINTS = ["/books", "/categories"];
+const STATIC_ASSETS = [
+  "/",
+  "/index.html",
+  "/manifest.json",
+  "/favicon.ico",
+];
+
+
+const API_ENDPOINTS = [
+  "/books",
+  "/categories",
+  
+];
+
 
 self.addEventListener("install", (event) => {
   console.log("Service Worker: Installing...");
@@ -17,7 +29,7 @@ self.addEventListener("install", (event) => {
         return cache.addAll(STATIC_ASSETS);
       }),
       self.skipWaiting(),
-    ]),
+    ])
   );
 });
 
@@ -25,6 +37,7 @@ self.addEventListener("activate", (event) => {
   console.log("Service Worker: Activating...");
   event.waitUntil(
     Promise.all([
+     
       caches.keys().then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
@@ -36,12 +49,12 @@ self.addEventListener("activate", (event) => {
               console.log("Service Worker: Deleting old cache:", cacheName);
               return caches.delete(cacheName);
             }
-          }),
+          })
         );
       }),
-
+    
       self.clients.claim(),
-    ]),
+    ])
   );
 });
 
@@ -56,6 +69,7 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(networkFirstStrategy(request, API_CACHE));
     return;
   }
+
 
   if (
     STATIC_ASSETS.some((asset) => url.pathname === asset) ||

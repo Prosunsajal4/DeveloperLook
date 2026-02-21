@@ -143,9 +143,9 @@ const PrivacyTerms = () => {
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   Permission is granted to temporarily access the materials on
-                  NewsHub for personal, non-commercial transitory viewing only.
-                  This is the grant of a license, not a transfer of title, and
-                  under this license you may not:
+                  NewsHub for personal, non-commercial transitory viewing
+                  only. This is the grant of a license, not a transfer of title,
+                  and under this license you may not:
                 </p>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 leading-relaxed mb-6 space-y-2">
                   <li>Modify or copy the materials</li>
@@ -178,18 +178,19 @@ const PrivacyTerms = () => {
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   NewsHub provides aggregated news content from third-party
-                  sources. We do not sell physical goods, so returns and refunds
-                  policies for products are not applicable.
+                  sources. We do not sell physical goods, so returns and
+                  refunds policies for products are not applicable.
                 </p>
 
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                   Limitation of Liability
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  In no event shall NewsHub or its suppliers be liable for any
-                  damages (including, without limitation, damages for loss of
-                  data or profit, or due to business interruption) arising out
-                  of the use or inability to use the materials on our website.
+                  In no event shall NewsHub or its suppliers be liable for
+                  any damages (including, without limitation, damages for loss
+                  of data or profit, or due to business interruption) arising
+                  out of the use or inability to use the materials on our
+                  website.
                 </p>
               </div>
             </div>
