@@ -28,7 +28,6 @@ const Login = () => {
 
   const from = location.state || "/";
 
-
   const demoCredentials = {
     admin: {
       email: "admin@newshub.com",
@@ -62,7 +61,6 @@ const Login = () => {
     toast.success(`${demoCredentials[role].label} credentials filled!`);
   };
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.target;
@@ -70,7 +68,6 @@ const Login = () => {
     const passwordValue = form.password.value;
 
     try {
-
       const { user } = await signIn(emailValue, passwordValue);
 
       await saveOrUpdateUser({
@@ -78,7 +75,6 @@ const Login = () => {
         email: user?.email,
         image: user?.photoURL,
       });
-
 
       queryClient.invalidateQueries({ queryKey: ["role", user?.email] });
 
@@ -90,10 +86,8 @@ const Login = () => {
     }
   };
 
-
   const handleGoogleSignIn = async () => {
     try {
-
       const { user } = await signInWithGoogle();
 
       await saveOrUpdateUser({
@@ -101,7 +95,6 @@ const Login = () => {
         email: user?.email,
         image: user?.photoURL,
       });
-
 
       queryClient.invalidateQueries({ queryKey: ["role", user?.email] });
 

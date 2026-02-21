@@ -5,7 +5,8 @@ export default function NewsCard({ article }) {
   const date = article?.pubDate
     ? new Date(article.pubDate).toLocaleString()
     : "";
-  const image = article.image || article.image_url || article?.thumbnail || null;
+  const image =
+    article.image || article.image_url || article?.thumbnail || null;
   return (
     <article className="p-4 border rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-200">
       <div className="md:flex md:items-start md:gap-4">
@@ -22,7 +23,10 @@ export default function NewsCard({ article }) {
 
         <div className="flex-1 mt-3 md:mt-0">
           <h3 className="font-semibold text-lg leading-tight">
-            <Link to={`/news/${encodeURIComponent(article.articleId)}`} className="hover:text-indigo-600">
+            <Link
+              to={`/news/${encodeURIComponent(article.articleId)}`}
+              className="hover:text-indigo-600"
+            >
               {article.title}
             </Link>
           </h3>
@@ -31,7 +35,9 @@ export default function NewsCard({ article }) {
           </p>
           <p className="mt-2 text-gray-700 dark:text-gray-300">
             {(article.content || article.description || "").slice(0, 260)}
-            {(article.content || article.description || "").length > 260 ? "..." : ""}
+            {(article.content || article.description || "").length > 260
+              ? "..."
+              : ""}
           </p>
           <div className="mt-3">
             <a

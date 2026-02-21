@@ -19,7 +19,6 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const queryClient = useQueryClient();
 
-
   const {
     register,
     handleSubmit,
@@ -31,29 +30,14 @@ const SignUp = () => {
     const { name, image, email, password } = data;
     const imageFile = image[0];
 
-
-
     try {
-
-
-
-
-
-
       const imageURL = await imageUpload(imageFile);
-
-
-
 
       const result = await createUser(email, password);
 
       await saveOrUpdateUser({ name, email, image: imageURL });
 
-
       queryClient.invalidateQueries({ queryKey: ["role", email] });
-
-
-
 
       await updateUserProfile(name, imageURL);
 
@@ -67,37 +51,8 @@ const SignUp = () => {
     }
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const handleGoogleSignIn = async () => {
     try {
-
       const { user } = await signInWithGoogle();
 
       await saveOrUpdateUser({
@@ -105,7 +60,6 @@ const SignUp = () => {
         email: user?.email,
         image: user?.photoURL,
       });
-
 
       queryClient.invalidateQueries({ queryKey: ["role", user?.email] });
 
